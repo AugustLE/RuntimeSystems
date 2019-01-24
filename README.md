@@ -8,7 +8,7 @@ To compare the languages, we want to implement more complex programs and algorit
 # Team Members
 
 ## [Kasper Berg](https://github.com/kasperkberg)
-![Kasper](headshots/bilde.jpg | width=30)
+![Kasper](headshots/bilde.jpg)
 
 ## [August Eilertsen](https://github.com/augustle)
 ![August]
