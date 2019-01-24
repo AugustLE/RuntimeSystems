@@ -11,4 +11,4 @@ To compare the languages, we want to implement more complex programs and algorit
 ![Kasper](headshots/bilde.jpg)
 
 ## [August Eilertsen](https://github.com/augustle)
-![August]
+![August](headshots/bilde_aug.jpg)
