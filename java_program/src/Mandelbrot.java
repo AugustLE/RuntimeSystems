@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.concurrent.atomic.*;
 
+//source : https://benchmarksgame-team.pages.debian.net/benchmarksgame/program/mandelbrot-java-2.html
+
 public class Mandelbrot {
     static byte[][] out;
     static AtomicInteger yCt;
