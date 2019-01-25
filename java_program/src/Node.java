@@ -1,3 +1,6 @@
+
+// part-code that might be used for A* alogrithm
+
 public class Node {
 
     private boolean is_startNode;
