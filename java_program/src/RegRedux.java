@@ -1,3 +1,10 @@
+/*
+   The Computer Language Benchmarks Game
+   https://salsa.debian.org/benchmarksgame-team/benchmarksgame/
+
+   contributed by Francois Green
+*/
+
 import java.io.*;
 
 import java.util.*;
