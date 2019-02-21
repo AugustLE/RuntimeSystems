@@ -2,6 +2,9 @@ __author__ = 'KasperKBerg'
 
 
 import random
+import time
+import cProfile
+import stackimpact
 
 class Vehicle:
     __weight_kg= None
@@ -60,31 +63,40 @@ class Car(Vehicle):
 
 
 INSTANCE_NUMBER = 1000
+RUN_NUMBER = 20
 BRANDS = ["BMW", "Audi", "VW", "Chevrolet", "Ford"]
 
-if __name__ == '__main__':
-
+def run_program():
     carPool = []
-    execution_number = 0
-
-    while(True):
-        execution_number+=1
-        print("\n\n------------------ Start execution nr: " + str(execution_number) +" ------------------")
-        inn = input("\nPress any number and enter to start: ")
-        for i in range(0,INSTANCE_NUMBER):
-
+    # print("Program executes in 20 sec")
+    # time.sleep(20)
+    # agent = stackimpact.start(
+    #  agent_key='7acd7833b3b0a9888cf1365d3d1fe2ac1743cdf1',
+    #   app_name='SimpleProgram')
+    # span = agent.profile('SimpleProgram1')
+    for i in range(RUN_NUMBER):
+        for i in range(0, INSTANCE_NUMBER):
             generator = random
 
-            hp = generator.randint(100,1100)
-            weight = generator.randint(100,1100)
-            brand_index = generator.randint(0,len(BRANDS)-1)
+            hp = generator.randint(100, 1100)
+            weight = generator.randint(100, 1100)
+            brand_index = generator.randint(0, len(BRANDS) - 1)
             brand = BRANDS[brand_index]
 
-            new_car = Car(weight,hp,4,brand,100000,5,False)
-            time = generator.randint(1,21)
+            new_car = Car(weight, hp, 4, brand, 100000, 5, False)
+            time = generator.randint(1, 21)
             new_car.accelerate(time)
             carPool.append(new_car)
 
         for car in carPool:
             print("\n\nVertical normal force on 90 degree angle: " + str(car.getVerticalNormalForce()))
             print("\nSpeed: " + str(car.getSpeed()) + " km/h")
+    print('\n')
+
+    # span.stop()
+
+
+if __name__ == '__main__':
+
+    cProfile.run('run_program()')
+    #run_program()

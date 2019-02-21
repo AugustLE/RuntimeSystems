@@ -1,23 +1,24 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class SimpleProgram {
     static int INSTANCE_NUMBER = 1000;
+    static int RUN_NUMBER = 20;
     static String[] BRANDS = { "BMW", "Audi", "VW", "Chevrolet", "Ford" };
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         ArrayList<Car> carPool = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
-        int execution_number = 0;
+        //Scanner input = new Scanner(System.in);
+        //input.next();
+        System.out.println("Starting in 15 sec");
+        Thread.sleep(15000);
 
-        while(true) {
-            execution_number++;
-            System.out.print("\n\n------------------ Start execution nr: " + execution_number +" ------------------");
-            System.out.print("\nPress any number and enter to start:");
-            input.nextInt();
+        for (int k = 0; k < RUN_NUMBER; k++) {
+
             for(int i = 0; i < INSTANCE_NUMBER; i++) {
 
                 Random generator = new Random();
@@ -38,6 +39,10 @@ public class SimpleProgram {
                 System.out.print("\nSpeed: " + car.getSpeed() + " km/h");
             }
         }
+
+
+        System.out.println("Press Enter to stop...");
+        System.in.read();
 
     }
 }
