@@ -14,8 +14,8 @@ public class SimpleProgram {
         ArrayList<Car> carPool = new ArrayList<>();
         //Scanner input = new Scanner(System.in);
         //input.next();
-        System.out.println("Starting in 15 sec");
-        Thread.sleep(15000);
+        System.out.println("Starting in 20 sec");
+        Thread.sleep(20000);
 
         for (int k = 0; k < RUN_NUMBER; k++) {
 

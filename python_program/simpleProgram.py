@@ -5,6 +5,8 @@ import random
 import time
 import cProfile
 import stackimpact
+from memory_profiler import profile
+#import psutil
 
 class Vehicle:
     __weight_kg= None
@@ -66,6 +68,7 @@ INSTANCE_NUMBER = 1000
 RUN_NUMBER = 20
 BRANDS = ["BMW", "Audi", "VW", "Chevrolet", "Ford"]
 
+@profile
 def run_program():
     carPool = []
     # print("Program executes in 20 sec")
@@ -98,5 +101,5 @@ def run_program():
 
 if __name__ == '__main__':
 
-    cProfile.run('run_program()')
-    #run_program()
+    #cProfile.run('run_program()')
+    run_program()
