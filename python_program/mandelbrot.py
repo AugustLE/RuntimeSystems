@@ -7,6 +7,9 @@ from contextlib import closing
 from itertools import islice
 from os import cpu_count
 from sys import argv, stdout
+#import cProfile
+from memory_profiler import profile
+
 
 def pixels(y, n, abs):
     range7 = bytearray(range(7))
@@ -62,7 +65,9 @@ def compute_rows(n, f):
             unordered_rows = pool.imap_unordered(f, row_jobs)
             yield from ordered_rows(unordered_rows, n)
 
-def mandelbrot(n):
+@profile
+def mandelbrot():
+    n = 15000
     write = stdout.buffer.write
 
     with closing(compute_rows(n, compute_row)) as rows:
@@ -70,5 +75,8 @@ def mandelbrot(n):
         for row in rows:
             write(row[1])
 
+    print('\n\n')
+
 if __name__ == '__main__':
-    mandelbrot(int(argv[1]))
+    mandelbrot()
+    #cProfile.run('mandelbrot()')

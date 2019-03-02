@@ -64,7 +64,7 @@ class Car(Vehicle):
 
 
 
-INSTANCE_NUMBER = 1000
+INSTANCE_NUMBER = 5000
 RUN_NUMBER = 20
 BRANDS = ["BMW", "Audi", "VW", "Chevrolet", "Ford"]
 
