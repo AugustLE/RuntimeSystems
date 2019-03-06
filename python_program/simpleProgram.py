@@ -4,9 +4,11 @@ __author__ = 'KasperKBerg'
 import random
 import time
 import cProfile
+import datetime
 import stackimpact
 from memory_profiler import profile
 #import psutil
+import sys
 
 class Vehicle:
     __weight_kg= None
@@ -64,42 +66,50 @@ class Car(Vehicle):
 
 
 
-INSTANCE_NUMBER = 5000
+INSTANCE_NUMBER = 250000
 RUN_NUMBER = 20
 BRANDS = ["BMW", "Audi", "VW", "Chevrolet", "Ford"]
 
-@profile
-def run_program():
-    carPool = []
-    # print("Program executes in 20 sec")
-    # time.sleep(20)
-    # agent = stackimpact.start(
-    #  agent_key='7acd7833b3b0a9888cf1365d3d1fe2ac1743cdf1',
-    #   app_name='SimpleProgram')
-    # span = agent.profile('SimpleProgram1')
+
+def createCars(carPool):
     for i in range(RUN_NUMBER):
         for i in range(0, INSTANCE_NUMBER):
             generator = random
-
             hp = generator.randint(100, 1100)
             weight = generator.randint(100, 1100)
             brand_index = generator.randint(0, len(BRANDS) - 1)
             brand = BRANDS[brand_index]
-
             new_car = Car(weight, hp, 4, brand, 100000, 5, False)
             time = generator.randint(1, 21)
             new_car.accelerate(time)
             carPool.append(new_car)
-
         for car in carPool:
-            print("\n\nVertical normal force on 90 degree angle: " + str(car.getVerticalNormalForce()))
-            print("\nSpeed: " + str(car.getSpeed()) + " km/h")
-    print('\n')
+            car.accelerate(5)
+         #   print("\n\nVertical normal force on 90 degree angle: " + str(car.getVerticalNormalForce()))
+          #  print("\nSpeed: " + str(car.getSpeed()) + " km/h")
 
+
+## @profile  will enable memory profiler
+#@profile
+def run_program():
+    carPool = []
+    createCars(carPool)
+    print('\n')
     # span.stop()
+
+def intSizetest():
+    x = 2
+    print(sys.getsizeof(2))
+
 
 
 if __name__ == '__main__':
 
-    #cProfile.run('run_program()')
+    start_time = datetime.datetime.now()
     run_program()
+    print('\nFINISHED AT: ')
+    print(datetime.datetime.now() - start_time)
+    print('\n')
+
+
+

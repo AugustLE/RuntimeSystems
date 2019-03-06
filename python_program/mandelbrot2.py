@@ -2,6 +2,8 @@ import numpy as np
 from PIL import Image
 import datetime
 
+""" THIS CODE IS JUST TO TEST MANDELBROT WITHOUT MULTIPROCESSING. WE ARE USING THE mandelbrot.py FOR THE RESULTS"""
+
 def show(data):
     img = Image.frombytes('1', data.shape[::-1], np.packbits(data, 1))
     img.show()
@@ -15,6 +17,7 @@ n = 15000
 maxiter = 100
 
 M = np.zeros([n, n], np.uint8)
+print(M)
 xvalues = np.linspace(-2, 2, n)
 yvalues = np.linspace(-2, 2, n)
 

@@ -14,7 +14,6 @@ public class Mandelbrot {
         for(int i=0;i<8;i+=2){
             double Zr1=Crb[x+i];
             double Zi1=Cib[y];
-
             double Zr2=Crb[x+i+1];
             double Zi2=Cib[y];
 
@@ -42,7 +41,11 @@ public class Mandelbrot {
     }
 
     public static void main(String[] args) throws Exception {
-        int N=6000;
+
+        System.out.println("Starting in 20 sec");
+        Thread.sleep(20000);
+
+        int N=15000;
         if (args.length>=1) N=Integer.parseInt(args[0]);
 
         Crb=new double[N+7]; Cib=new double[N+7];
@@ -67,5 +70,7 @@ public class Mandelbrot {
         stream.write(("P4\n"+N+" "+N+"\n").getBytes());
         for(int i=0;i<N;i++) stream.write(out[i]);
         stream.close();
+
+        Thread.sleep(20000);
     }
 }
