@@ -19,7 +19,7 @@ Documentation link: https://gdoc.pub/doc/e/2PACX-1vTWfIYI0D71U-qFzV_JD34DMJgV3Z8
 # Profiling
 ## Java
 We used the YourKit Java profiler. It costs money, but we used a free trial period.
-Run a Java proram from above, and go to YourKit and start the profiler.
+Run a Java program, and go to YourKit and start the profiler. More detailed information can be found at https://www.yourkit.com/docs/java/help/cpu_intro.jsp 
 
 ## Python
 We used mprofiler.
