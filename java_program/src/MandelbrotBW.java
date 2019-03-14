@@ -4,6 +4,8 @@ import javax.imageio.ImageIO;
 
 // source https://github.com/joni/fractals/blob/master/mandelbrot/MandelbrotBW.java
 
+/* TODO: THIS CODE IS ONLY FOR TESTING. THE other Mabdelbrot CODE IS USED FOR THE PROJECT */
+
 class MandelbrotBW {
 
     public static void main(String[] args) throws Exception {

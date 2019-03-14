@@ -3,10 +3,9 @@ __author__ = 'KasperKBerg'
 
 import random
 import time
-import cProfile
 import datetime
 import stackimpact
-from memory_profiler import profile
+#from memory_profiler import profile
 #import psutil
 import sys
 

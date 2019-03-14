@@ -17,8 +17,8 @@ public class SimpleProgram {
         //Scanner input = new Scanner(System.in);
         //input.next();
         //System.out.println("Starting in 20 sec");
-        long start_time = System.nanoTime();
         Thread.sleep(15000);
+        long start_time = System.nanoTime();
 
 
         for (int k = 0; k < RUN_NUMBER; k++) {

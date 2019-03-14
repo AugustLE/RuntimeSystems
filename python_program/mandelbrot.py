@@ -7,7 +7,6 @@ from contextlib import closing
 from itertools import islice
 from os import cpu_count
 from sys import argv, stdout
-import cProfile
 #from memory_profiler import profile
 
 def pixels(y, n, abs):
@@ -78,4 +77,3 @@ def mandelbrot():
 
 if __name__ == '__main__':
     mandelbrot()
-    #cProfile.run('mandelbrot()')
