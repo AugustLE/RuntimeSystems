@@ -24,7 +24,9 @@ Run a Java proram from above, and go to YourKit and start the profiler.
 ## Python
 We used mprofiler.
 Uncomment (or insert if not already there) @profile above the main-method. Then run
+
 ```$ python3 -m memory_profiler example.py``` 
+
 in the terminal.
 
 We also profiled time-based memory usage. Remove/uncomment @profile above the main method.
