@@ -14,3 +14,22 @@ Documentation link: https://gdoc.pub/doc/e/2PACX-1vTWfIYI0D71U-qFzV_JD34DMJgV3Z8
 
 ## [August Eilertsen](https://github.com/augustle)
 ![August](headshots/bilde_aug.jpg)
+
+
+# Profiling
+## Java
+We used the YourKit Java profiler. It costs money, but we used a free trial period.
+Run a Java proram from above, and go to YourKit and start the profiler.
+
+## Python
+We used mprofiler.
+Uncomment (or insert if not already there) @profile above the main-method. Then run
+```$ python3 -m memory_profiler example.py``` 
+in the terminal.
+
+We also profiled time-based memory usage. Remove/uncomment @profile above the main method.
+Then run
+```
+$ mprof run example.py
+$ mprof plot
+```
